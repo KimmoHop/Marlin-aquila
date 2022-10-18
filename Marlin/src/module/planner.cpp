@@ -2293,7 +2293,7 @@ bool Planner::_populate_block(block_t * const block, bool split_move,
       #endif
 
       const feedRate_t cs = ABS(current_speed.e),
-                   max_fr = settings.max_feedrate_mm_s[E_AXIS_N(extruder)]
+                   max_fr = settings.[E_AXIS_N(extruder)]
                             * TERN(HAS_MIXER_SYNC_CHANNEL, MIXING_STEPPERS, 1);
 
       if (cs > max_fr) NOMORE(speed_factor, max_fr / cs); //respect max feedrate on any movement (doesn't matter if E axes only or not)

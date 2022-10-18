@@ -143,7 +143,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Aquila"
+#define CUSTOM_MACHINE_NAME "Aquila Zz"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -1051,7 +1051,7 @@
  * Use G29 repeatedly, adjusting the Z height at each point with movement commands
  * or (with LCD_BED_LEVELING) the LCD controller.
  */
-//#define PROBE_MANUALLY
+#define PROBE_MANUALLY
 
 /**
  * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
@@ -1170,7 +1170,7 @@
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 15
+#define PROBING_MARGIN 20
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (133*60)
@@ -1318,7 +1318,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR false
+#define INVERT_E0_DIR true
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -1360,8 +1360,8 @@
 #define Y_BED_SIZE 220
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define X_MIN_POS -2
+#define Y_MIN_POS -5
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
@@ -1523,7 +1523,7 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-//#define AUTO_BED_LEVELING_BILINEAR
+#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
@@ -1532,7 +1532,7 @@
  * these options to restore the prior leveling state or to always enable
  * leveling immediately after G28.
  */
-//#define RESTORE_LEVELING_AFTER_G28
+#define RESTORE_LEVELING_AFTER_G28
 //#define ENABLE_LEVELING_AFTER_G28
 
 /**
@@ -1590,7 +1590,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 5
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
@@ -1846,19 +1846,24 @@
 #define PREHEAT_1_FAN_SPEED   255 // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "PLA"
-#define PREHEAT_2_TEMP_HOTEND 190
-#define PREHEAT_2_TEMP_BED     55
-#define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
+#define PREHEAT_2_TEMP_HOTEND 200
+#define PREHEAT_2_TEMP_BED     60
+#define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
 
-#define PREHEAT_3_LABEL       "ABS"
-#define PREHEAT_3_TEMP_HOTEND 240
-#define PREHEAT_3_TEMP_BED     70
-#define PREHEAT_3_FAN_SPEED   255 // Value from 0 to 255
+#define PREHEAT_3_LABEL       "PLA+"
+#define PREHEAT_3_TEMP_HOTEND 220
+#define PREHEAT_3_TEMP_BED     60
+#define PREHEAT_3_FAN_SPEED     0 // Value from 0 to 255
 
-#define PREHEAT_4_LABEL       "PETG"
+#define PREHEAT_4_LABEL       "ABS"
 #define PREHEAT_4_TEMP_HOTEND 240
-#define PREHEAT_4_TEMP_BED     70
-#define PREHEAT_4_FAN_SPEED   255 // Value from 0 to 255
+#define PREHEAT_4_TEMP_BED     90
+#define PREHEAT_4_FAN_SPEED     0 // Value from 0 to 255
+
+#define PREHEAT_5_LABEL       "PETG"
+#define PREHEAT_5_TEMP_HOTEND 240
+#define PREHEAT_5_TEMP_BED     70
+#define PREHEAT_5_FAN_SPEED     0 // Value from 0 to 255
 
 //#define PREHEAT_5_LABEL       "TPU"
 //#define PREHEAT_5_TEMP_HOTEND 230

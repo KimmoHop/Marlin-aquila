@@ -2037,7 +2037,7 @@ void CrealityDWINClass::Menu_Item_Handler(uint8_t menu, uint8_t item, bool draw/
         #define PID_CYCLES (PID_BED + 1)
         #define PID_TOTAL PID_CYCLES
 
-        static uint8_t PID_cycles = 5;
+        static uint8_t PID_cycles = 8;
 
         switch (item) {
           case PID_BACK:
@@ -5421,7 +5421,7 @@ void CrealityDWINClass::Load_Settings(const char *buff) {
   #if ENABLED(AUTO_BED_LEVELING_UBL)
     mesh_conf.tilt_grid = eeprom_settings.tilt_grid_size+1;
   #endif
-  if (eeprom_settings.corner_pos == 0) eeprom_settings.corner_pos = 325;
+  if (eeprom_settings.corner_pos == 0) eeprom_settings.corner_pos = 255;
   corner_pos = eeprom_settings.corner_pos / 10.0f;
   Redraw_Screen();
   static bool init = true;
@@ -5437,7 +5437,7 @@ void CrealityDWINClass::Reset_Settings() {
   #if ENABLED(AUTO_BED_LEVELING_UBL)
     eeprom_settings.tilt_grid_size = 0;
   #endif
-  eeprom_settings.corner_pos = 325;
+  eeprom_settings.corner_pos = 255;
   eeprom_settings.cursor_color = 0;
   eeprom_settings.menu_split_line = 0;
   eeprom_settings.menu_top_bg = 0;
